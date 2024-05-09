@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EventBus'
-  s.version          = 'v1.0.0'
+  s.version          = '1.0.0'
   s.summary          = 'A lightweight, protocol-oriented event bus framework for Swift.'
   s.description      = <<-DESC
                         EventBus is a lightweight, protocol-oriented event bus framework for Swift. It facilitates communication between components in an application without requiring the components to have direct references to each other.
