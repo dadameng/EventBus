@@ -19,5 +19,6 @@ let package = Package(
         .testTarget(
             name: "EventBusTests",
             dependencies: ["EventBus"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]  // 指定Swift版本
 )
