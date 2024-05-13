@@ -9,16 +9,24 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "EventBus",
-            targets: ["EventBus"]),
+            targets: ["EventBusSwift", "EventBusObjC"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "EventBus"),
+            name: "EventBusSwift",
+            dependencies: ["EventBusObjC"],
+            path: "Sources/EventBus/Swift"
+        ),
+        .target(
+            name: "EventBusObjC",
+            path: "Sources/EventBus/ObjC",
+            publicHeadersPath: "."
+        ),
         .testTarget(
             name: "EventBusTests",
-            dependencies: ["EventBus"]),
+            dependencies: ["EventBusSwift", "EventBusObjC"]),
     ],
-    swiftLanguageVersions: [.v5]  // 指定Swift版本
+    swiftLanguageVersions: [.v5]
 )

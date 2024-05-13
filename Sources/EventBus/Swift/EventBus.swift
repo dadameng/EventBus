@@ -1,22 +1,18 @@
 import Foundation
+import EventBusObjC
 
 // MARK: Protocol
-
-@objc public protocol Event {
-    static func eventClass() -> AnyClass
-    func subtypeOfEvent() -> String?
-}
 
 @objc public protocol EventSubscribeToken {
     func dispose()
 }
 
-@objc public protocol EventBusSubscribable {
+public protocol EventBusSubscribable {
     var eventLifeCycleTracker: EventLifeCycleTracker? { get }
-    func subscribe(to eventClass: Event.Type) -> EventBus.EventSubscriberMaker
-    func subscribeOnBus(to eventClass: Event.Type, on bus: EventBus) -> EventBus.EventSubscriberMaker
-    func subscribeToJSON(name: String) -> EventBus.EventSubscriberMaker
-    func subscribeToNotification(name: String) -> EventBus.EventSubscriberMaker
+    func subscribe<T: Event>(to eventClass: T.Type) -> EventSubscriberMaker<T>
+    func subscribeOnBus<T: Event>(to eventClass: Event.Type, on bus: EventBus) -> EventSubscriberMaker<T>
+    func subscribeToJSON<T: Event>(name: String) -> EventSubscriberMaker<T>
+    func subscribeToNotification<T: Event>(name: String) -> EventSubscriberMaker<T>
 }
 
 protocol EventBusContainerValue {
@@ -26,75 +22,6 @@ protocol EventBusContainerValue {
 // MARK: Content Type
 
 public final class EventBus: NSObject {
-    public final class EventSubscriberMaker: NSObject {
-        var eventClass: Event.Type
-        private unowned var eventBus: EventBus
-
-        var eventSubTypes: [String] = []
-        var queue: DispatchQueue?
-        weak var lifeTimeTracker: EventLifeCycleTracker?
-        var handler: ((Event) -> Void)?
-
-        init(eventBus: EventBus, eventClass: Event.Type) {
-            self.eventBus = eventBus
-            self.eventClass = eventClass
-        }
-
-        @discardableResult
-        @objc public func next(_ handler: @escaping (Event) -> Void) -> EventSubscribeToken {
-            self.handler = handler
-            return eventBus.createNewSubscriber(with: self)
-        }
-
-        @objc public func atQueue(_ queue: DispatchQueue) -> EventSubscriberMaker {
-            self.queue = queue
-            return self
-        }
-
-        @objc public func autoDisposeTokenWith(_ object: EventLifeCycleTracker) -> EventSubscriberMaker {
-            lifeTimeTracker = object
-            return self
-        }
-
-        @objc public func ofSubType(_ eventType: String) -> EventSubscriberMaker {
-            eventSubTypes.append(eventType)
-            return self
-        }
-
-        // Closure properties to support fluent APIs using closures
-        @objc public var atQueueClosure: (DispatchQueue) -> EventSubscriberMaker {
-            return { queue in
-                self.queue = queue
-                return self
-            }
-        }
-
-        @objc public var ofSubTypeClosure: (String) -> EventSubscriberMaker {
-            return { eventType in
-                self.eventSubTypes.append(eventType)
-                return self
-            }
-        }
-
-        @objc public var autoDisposeTokenWithClosure: (EventLifeCycleTracker) -> EventSubscriberMaker {
-            return { lifeTimeTracker in
-                self.lifeTimeTracker = lifeTimeTracker
-                return self
-            }
-        }
-
-        fileprivate func make(uniqueId: String) -> EventSubscriber {
-            let subsriber: EventSubscriber = EventSubscriber(eventClass: eventClass, uniqueId: uniqueId)
-            subsriber.subscriberQueue = queue
-            subsriber.handler = handler
-            subsriber.eventSubTypes = eventSubTypes
-            if let lifeTimeTracker = lifeTimeTracker {
-                subsriber.eventLifeCycleTracker = lifeTimeTracker
-            }
-            return subsriber
-        }
-    }
-
     final class EventSubscriber: EventBusContainerValue {
         var eventClass: Event.Type
         let uniqueId: String
@@ -255,7 +182,7 @@ public final class EventBus: NSObject {
     }
 
     private func dispatch(_ event: Event) {
-        if let subtypeOfEvent = event.subtypeOfEvent() {
+        if let subtypeOfEvent = event.subtypeOfEvent?() {
             let eventKey = generateEventKey(for: type(of: event), subeventName: subtypeOfEvent)
             publish(for: eventKey, event: event)
         }
@@ -315,34 +242,6 @@ public final class EventBus: NSObject {
     deinit {
         pthread_mutex_destroy(&accessLock)
         pthread_mutexattr_destroy(&attr)
-    }
-}
-
-@objc public final class EventLifeCycleTracker: NSObject {
-    var tokens = [EventSubscribeToken]()
-    private var mutex = pthread_mutex_t()
-    private var attr = pthread_mutexattr_t()
-
-    override init() {
-        pthread_mutexattr_init(&attr)
-        pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE)
-        pthread_mutex_init(&mutex, &attr)
-    }
-
-    deinit {
-        pthread_mutex_lock(&mutex)
-        defer {
-            pthread_mutex_unlock(&mutex)
-            pthread_mutex_destroy(&mutex)
-            pthread_mutexattr_destroy(&attr)
-        }
-        tokens.forEach { $0.dispose() }
-    }
-
-    func addToken(_ token: EventSubscribeToken) {
-        pthread_mutex_lock(&mutex)
-        defer { pthread_mutex_unlock(&mutex) }
-        tokens.append(token)
     }
 }
 
@@ -499,7 +398,7 @@ public final class JSONEvent: NSObject, Event {
         return JSONEvent.self
     }
 
-    public func subtypeOfEvent() -> String? {
+    public func subtypeOfEvent() -> String {
         uniqueId
     }
 
@@ -514,66 +413,27 @@ public final class JSONEvent: NSObject, Event {
 
 // MARK: extension
 
-extension NSObject: EventBusSubscribable {
-    private struct AssociatedKeys {
-        static var lifeCycleTracker: UInt8 = 0
-    }
-
-    @objc public var eventLifeCycleTracker: EventLifeCycleTracker? {
-        if let lifeCycleTracker = objc_getAssociatedObject(self, &AssociatedKeys.lifeCycleTracker) as? EventLifeCycleTracker {
-            return lifeCycleTracker
-        } else {
-            let lifeCycleTracker = EventLifeCycleTracker()
-            objc_setAssociatedObject(self, &AssociatedKeys.lifeCycleTracker, lifeCycleTracker, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            return lifeCycleTracker
-        }
-    }
-
-    @objc public func subscribe(to eventClass: Event.Type) -> EventBus.EventSubscriberMaker {
-        let maker = EventBus.shared.on(eventType: eventClass)
-        guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
-        return maker.autoDisposeTokenWith(eventLifeCycleTracker)
-    }
-
-    @objc public func subscribeOnBus(to eventClass: Event.Type, on bus: EventBus) -> EventBus.EventSubscriberMaker {
-        let maker = bus.on(eventType: eventClass)
-        guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
-        return maker.autoDisposeTokenWith(eventLifeCycleTracker)
-    }
-
-    @objc public func subscribeToJSON(name: String) -> EventBus.EventSubscriberMaker {
-        let maker = EventBus.shared.on(eventType: JSONEvent.self).ofSubType(name)
-        guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
-        return maker.autoDisposeTokenWith(eventLifeCycleTracker)
-    }
-
-    @objc public func subscribeToNotification(name: String) -> EventBus.EventSubscriberMaker {
-        let maker = EventBus.shared.on(eventType: NSNotification.self).ofSubType(name)
-        guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
-        return maker.autoDisposeTokenWith(eventLifeCycleTracker)
-    }
-}
 
 extension EventBusSubscribable {
-    public func subscribe(to eventClass: Event.Type) -> EventBus.EventSubscriberMaker {
+    public func subscribe<T: Event>(to eventClass: Event.Type) -> EventSubscriberMaker<T> {
         let maker = EventBus.shared.on(eventType: eventClass)
         guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
         return maker.autoDisposeTokenWith(eventLifeCycleTracker)
     }
 
-    public func subscribeOnBus(to eventClass: Event.Type, on bus: EventBus) -> EventBus.EventSubscriberMaker {
+    public func subscribeOnBus<T: Event>(to eventClass: Event.Type, on bus: EventBus) -> EventSubscriberMaker<T> {
         let maker = bus.on(eventType: eventClass)
         guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
         return maker.autoDisposeTokenWith(eventLifeCycleTracker)
     }
 
-    public func subscribeToJSON(name: String) -> EventBus.EventSubscriberMaker {
+    public func subscribeToJSON<T: Event>(name: String) -> EventSubscriberMaker<T> {
         let maker = EventBus.shared.on(eventType: JSONEvent.self).ofSubType(name)
         guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
         return maker.autoDisposeTokenWith(eventLifeCycleTracker)
     }
 
-    public func subscribeToNotification(name: String) -> EventBus.EventSubscriberMaker {
+    public func subscribeToNotification<T: Event>(name: String) -> EventSubscriberMaker<T> {
         let maker = EventBus.shared.on(eventType: NSNotification.self).ofSubType(name)
         guard let eventLifeCycleTracker = eventLifeCycleTracker else { return maker }
         return maker.autoDisposeTokenWith(eventLifeCycleTracker)
@@ -585,7 +445,7 @@ extension NSNotification: Event {
         return NSNotification.self
     }
 
-    public func subtypeOfEvent() -> String? {
+    public func subtypeOfEvent() -> String {
         return name.rawValue
     }
 }
