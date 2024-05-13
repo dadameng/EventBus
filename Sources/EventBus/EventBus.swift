@@ -152,7 +152,7 @@ public final class EventBus: NSObject {
         }
     }
 
-    public static let shared = EventBus()
+    @objc public static let shared = EventBus()
     private var prefix: String
     private var publishQueue: DispatchQueue
     private var notificationTracker = [String: Int]()
