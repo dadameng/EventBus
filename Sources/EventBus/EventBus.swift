@@ -25,8 +25,8 @@ protocol EventBusContainerValue {
 
 // MARK: Content Type
 
-@objc public final class EventBus: NSObject {
-    @objc public final class EventSubscriberMaker: NSObject {
+public final class EventBus: NSObject {
+    public final class EventSubscriberMaker: NSObject {
         var eventClass: Event.Type
         private unowned var eventBus: EventBus
 
@@ -41,7 +41,7 @@ protocol EventBusContainerValue {
         }
 
         @discardableResult
-        public func next(_ handler: @escaping (Event) -> Void) -> EventSubscribeToken {
+        @objc public func next(_ handler: @escaping (Event) -> Void) -> EventSubscribeToken {
             self.handler = handler
             return eventBus.createNewSubscriber(with: self)
         }
@@ -56,27 +56,27 @@ protocol EventBusContainerValue {
             return self
         }
 
-        public func ofSubType(_ eventType: String) -> EventSubscriberMaker {
+        @objc public func ofSubType(_ eventType: String) -> EventSubscriberMaker {
             eventSubTypes.append(eventType)
             return self
         }
 
         // Closure properties to support fluent APIs using closures
-        public var atQueueClosure: (DispatchQueue) -> EventSubscriberMaker {
+        @objc public var atQueueClosure: (DispatchQueue) -> EventSubscriberMaker {
             return { queue in
                 self.queue = queue
                 return self
             }
         }
 
-        public var ofSubTypeClosure: (String) -> EventSubscriberMaker {
+        @objc public var ofSubTypeClosure: (String) -> EventSubscriberMaker {
             return { eventType in
                 self.eventSubTypes.append(eventType)
                 return self
             }
         }
 
-        public var autoDisposeTokenWithClosure: (EventLifeCycleTracker) -> EventSubscriberMaker {
+        @objc public var autoDisposeTokenWithClosure: (EventLifeCycleTracker) -> EventSubscriberMaker {
             return { lifeTimeTracker in
                 self.lifeTimeTracker = lifeTimeTracker
                 return self
@@ -109,7 +109,7 @@ protocol EventBusContainerValue {
             self.uniqueId = uniqueId
         }
 
-        public func valueUniqueId() -> String {
+        func valueUniqueId() -> String {
             uniqueId
         }
     }
@@ -152,7 +152,7 @@ protocol EventBusContainerValue {
         }
     }
 
-    static let shared = EventBus()
+    public static let shared = EventBus()
     private var prefix: String
     private var publishQueue: DispatchQueue
     private var notificationTracker = [String: Int]()
@@ -169,20 +169,20 @@ protocol EventBusContainerValue {
         pthread_mutex_init(&accessLock, &attr)
     }
 
-    public func dispatchOnPublishQueue(_ event: any Event) {
+    @objc public func dispatchOnPublishQueue(_ event: any Event) {
         publishQueue.async { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.dispatch(event)
         }
     }
 
-    public func dispatchOnMain(_ event: any Event) {
+    @objc public func dispatchOnMain(_ event: any Event) {
         DispatchQueue.main.async {
             self.dispatch(event)
         }
     }
 
-    public func on(eventType: Event.Type) -> EventSubscriberMaker {
+    @objc public func on(eventType: Event.Type) -> EventSubscriberMaker {
         return EventSubscriberMaker(eventBus: self, eventClass: eventType)
     }
 
@@ -519,7 +519,7 @@ extension NSObject: EventBusSubscribable {
         static var lifeCycleTracker: UInt8 = 0
     }
 
-    public var eventLifeCycleTracker: EventLifeCycleTracker? {
+    @objc public var eventLifeCycleTracker: EventLifeCycleTracker? {
         if let lifeCycleTracker = objc_getAssociatedObject(self, &AssociatedKeys.lifeCycleTracker) as? EventLifeCycleTracker {
             return lifeCycleTracker
         } else {
