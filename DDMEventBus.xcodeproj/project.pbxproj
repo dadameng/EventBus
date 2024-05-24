@@ -12,6 +12,8 @@
 		3630B4B62BFDF10800DBFA00 /* EventSubscriberMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3630B4B32BFDF10800DBFA00 /* EventSubscriberMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3630B4B72BFDF10800DBFA00 /* EventBusProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3630B4B42BFDF10800DBFA00 /* EventBusProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3630B4B82BFDF10800DBFA00 /* EventSubscriberMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3630B4B52BFDF10800DBFA00 /* EventSubscriberMaker.m */; };
+		36B0D1632C002F5900315150 /* NSObject+EventBusAutoDispose.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B0D1612C002F5900315150 /* NSObject+EventBusAutoDispose.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36B0D1642C002F5900315150 /* NSObject+EventBusAutoDispose.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B0D1622C002F5900315150 /* NSObject+EventBusAutoDispose.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		3630B4B32BFDF10800DBFA00 /* EventSubscriberMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSubscriberMaker.h; sourceTree = "<group>"; };
 		3630B4B42BFDF10800DBFA00 /* EventBusProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBusProtocol.h; sourceTree = "<group>"; };
 		3630B4B52BFDF10800DBFA00 /* EventSubscriberMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventSubscriberMaker.m; sourceTree = "<group>"; };
+		36B0D1612C002F5900315150 /* NSObject+EventBusAutoDispose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+EventBusAutoDispose.h"; sourceTree = "<group>"; };
+		36B0D1622C002F5900315150 /* NSObject+EventBusAutoDispose.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EventBusAutoDispose.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				3630B4B42BFDF10800DBFA00 /* EventBusProtocol.h */,
 				3630B4B32BFDF10800DBFA00 /* EventSubscriberMaker.h */,
 				3630B4B52BFDF10800DBFA00 /* EventSubscriberMaker.m */,
+				36B0D1612C002F5900315150 /* NSObject+EventBusAutoDispose.h */,
+				36B0D1622C002F5900315150 /* NSObject+EventBusAutoDispose.m */,
 			);
 			path = Objc;
 			sourceTree = "<group>";
@@ -85,6 +91,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B0D1632C002F5900315150 /* NSObject+EventBusAutoDispose.h in Headers */,
 				3630B4B72BFDF10800DBFA00 /* EventBusProtocol.h in Headers */,
 				3630B4B62BFDF10800DBFA00 /* EventSubscriberMaker.h in Headers */,
 				3630B4A92BFDF0D100DBFA00 /* DDMEventBus.h in Headers */,
@@ -159,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B0D1642C002F5900315150 /* NSObject+EventBusAutoDispose.m in Sources */,
 				3630B4B12BFDF10000DBFA00 /* EventBus.swift in Sources */,
 				3630B4B82BFDF10800DBFA00 /* EventSubscriberMaker.m in Sources */,
 			);

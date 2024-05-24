@@ -5,7 +5,13 @@ import Foundation
 protocol EventBusContainerValue {
     func valueUniqueId() -> String
 }
-
+@objc public protocol EventBusSubscribable {
+    var lifeCycleTracker: EventLifeCycleTracker { get }
+    func subscribe(to eventClass: Event.Type) -> EventSubscriberMaking
+    func subscribeOnBus(to eventClass: Event.Type, on bus: EventBus) -> EventSubscriberMaking
+    func subscribeToJSON(name: String) -> EventSubscriberMaking
+    func subscribeToNotification(name: String) -> EventSubscriberMaking
+}
 // MARK: Content Type
 
 public final class SwiftEventSubscriberMaker<EventType: Event>: NSObject, EventSubscriberMaking {
@@ -154,7 +160,7 @@ public final class EventBus: NSObject {
         return SwiftEventSubscriberMaker(eventBus: self, eventClass: eventType)
     }
 
-    @objc public func onWithEventType(eventType: AnyClass) -> EventSubscriberMaker<AnyObject> {
+    @objc public func onWithEventType(_ eventType: AnyClass) -> EventSubscriberMaker<AnyObject> {
         return EventSubscriberMaker(eventBus: self, eventClass: eventType)
     }
 
@@ -539,5 +545,41 @@ extension NSNotification: Event {
 
     public func subtypeOfEvent() -> String {
         return name.rawValue
+    }
+}
+
+extension NSObject {
+    private struct AssociatedKeys {
+        static var lifeCycleTracker: UInt8 = 0
+    }
+    
+    @objc public var lifeCycleTracker: EventLifeCycleTracker {
+        if let lifeCycleTracker = objc_getAssociatedObject(self, &AssociatedKeys.lifeCycleTracker) as? EventLifeCycleTracker {
+            return lifeCycleTracker
+        } else {
+            let lifeCycleTracker = EventLifeCycleTracker()
+            objc_setAssociatedObject(self, &AssociatedKeys.lifeCycleTracker, lifeCycleTracker, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            return lifeCycleTracker
+        }
+    }
+    
+    public func subscriben<T: Event>(to eventType: T.Type) -> SwiftEventSubscriberMaker<T> {
+        let maker = EventBus.shared.on(eventType: eventType)
+        return maker.autoDisposeToken(with: lifeCycleTracker)
+    }
+    
+    public func subscribeOnBus<T: Event>(to eventClass: T.Type, on bus: EventBus) -> SwiftEventSubscriberMaker<T> {
+        let maker = bus.on(eventType: eventClass)
+        return maker.autoDisposeToken(with: lifeCycleTracker)
+    }
+    
+    public func subscribeToJSON(name: String) -> SwiftEventSubscriberMaker<JSONEvent> {
+        let maker = EventBus.shared.on(eventType: JSONEvent.self).ofSubType(name)
+        return maker.autoDisposeToken(with: lifeCycleTracker)
+    }
+    
+    public func subscribeToNotification(name: String) -> SwiftEventSubscriberMaker<NSNotification> {
+        let maker = EventBus.shared.on(eventType: NSNotification.self).ofSubType(name)
+        return maker.autoDisposeToken(with: lifeCycleTracker)
     }
 }

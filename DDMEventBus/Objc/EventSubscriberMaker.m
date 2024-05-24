@@ -29,7 +29,7 @@
 
 - (id<EventSubscribeToken>)next:(void (^)(id event))handler {
     self.handler = handler;
-    return nil;
+    return [self.eventBus createNewObjCSubscriberWith:self];
 }
 
 - (EventSubscriberMaker *)atQueue:(dispatch_queue_t)queue {
