@@ -2,29 +2,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "EventBus",
+    name: "DDMEventBus",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v13)
     ],
     products: [
         .library(
-            name: "EventBus",
-            targets: ["EventBus"]),
+            name: "DDMEventBus",
+            targets: ["DDMEventBus"]
+        ),
     ],
     targets: [
         .target(
-            name: "EventBus",
-            path: "EventBus/EventBus",
-            publicHeadersPath: "ObjC",
+            name: "DDMEventBus",
+            dependencies: [],
+            path: "EventBus",
+            sources: ["Objc", "Swift"],
+            publicHeadersPath: "Objc",
             cSettings: [
-                .headerSearchPath("ObjC"),
-                .define("SPM_MODULE")
+                .headerSearchPath("Objc")
             ]
-        ),
-        .testTarget(
-            name: "EventBusTests",
-            dependencies: ["EventBus"],
-            path: "Tests/EventBusTests"
         ),
     ],
     swiftLanguageVersions: [.v5]
