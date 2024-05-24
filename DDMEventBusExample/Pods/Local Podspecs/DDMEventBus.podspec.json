@@ -12,7 +12,8 @@
     "Author": "https://github.com/dadameng"
   },
   "source": {
-    "path": "."
+    "git": "https://github.com/dadameng/EventBus.git",
+    "tag": "2.0.0"
   },
   "platforms": {
     "ios": "13.0"

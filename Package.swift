@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "DDMEventBus",
-            targets: ["DDMEventBusSwift", "DDMEventBusObjc"]
+            targets: ["DDMEventBus"]
         ),
     ],
     targets: [
@@ -23,9 +23,12 @@ let package = Package(
             ]
         ),
         .target(
-            name: "DDMEventBusSwift",
+            name: "DDMEventBus",
             dependencies: ["DDMEventBusObjc"],
-            path: "DDMEventBus/Swift"
+            path: "DDMEventBus/Swift",
+            swiftSettings: [
+                .define("SPM")
+            ]
         ),
     ],
     swiftLanguageVersions: [.v5]
