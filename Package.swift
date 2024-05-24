@@ -9,19 +9,23 @@ let package = Package(
     products: [
         .library(
             name: "DDMEventBus",
-            targets: ["DDMEventBus"]
+            targets: ["DDMEventBusSwift", "DDMEventBusObjc"]
         ),
     ],
     targets: [
         .target(
-            name: "DDMEventBus",
+            name: "DDMEventBusObjc",
             dependencies: [],
-            path: "DDMEventBus",
-            sources: ["Objc", "Swift"],
-            publicHeadersPath: "Objc",
+            path: "DDMEventBus/Objc",
+            publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath("Objc")
+                .headerSearchPath(".")
             ]
+        ),
+        .target(
+            name: "DDMEventBusSwift",
+            dependencies: ["DDMEventBusObjc"],
+            path: "DDMEventBus/Swift"
         ),
     ],
     swiftLanguageVersions: [.v5]
