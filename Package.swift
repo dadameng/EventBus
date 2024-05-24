@@ -16,7 +16,7 @@ let package = Package(
         .target(
             name: "DDMEventBus",
             dependencies: [],
-            path: "EventBus",
+            path: "DDMEventBus",
             sources: ["Objc", "Swift"],
             publicHeadersPath: "Objc",
             cSettings: [
