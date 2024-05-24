@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/dadameng/EventBus"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Author" => "https://github.com/dadameng" }
-  s.source       = { :path => "." }
+  s.source       = { :git => 'https://github.com/dadameng/EventBus.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = "13.0"
   s.source_files  = "DDMEventBus/**/*.{h,m,swift}"
