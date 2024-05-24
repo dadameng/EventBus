@@ -1,0 +1,16 @@
+PODS:
+  - DDMEventBus (2.0.0)
+
+DEPENDENCIES:
+  - DDMEventBus (from `../`)
+
+EXTERNAL SOURCES:
+  DDMEventBus:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DDMEventBus: d4c4c70be992cde0d18d14b7074e6c62eacaf9a0
+
+PODFILE CHECKSUM: ad91e2a8153f3d6ead1f6428e8c17441cfe6de15
+
+COCOAPODS: 1.15.2

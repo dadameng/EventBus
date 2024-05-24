@@ -1,24 +1,28 @@
 // swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
-    name: "EventBus",
+    name: "DDMEventBus",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "EventBus",
-            targets: ["EventBus"]),
+            name: "DDMEventBus",
+            targets: ["DDMEventBus"]
+        ),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "EventBus"),
-        .testTarget(
-            name: "EventBusTests",
-            dependencies: ["EventBus"]),
+            name: "DDMEventBus",
+            dependencies: [],
+            path: "EventBus",
+            sources: ["Objc", "Swift"],
+            publicHeadersPath: "Objc",
+            cSettings: [
+                .headerSearchPath("Objc")
+            ]
+        ),
     ],
-    swiftLanguageVersions: [.v5]  // 指定Swift版本
+    swiftLanguageVersions: [.v5]
 )

@@ -1,0 +1,1022 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0787B950DF1200E14C35905049D69E4A /* NSObject+EventBusAutoDispose.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D554619AF6BA426777AEA0E23AB1B87 /* NSObject+EventBusAutoDispose.m */; };
+		172B38B4286C593CE0BCF9481940ED0B /* NSObject+EventBusAutoDispose.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DE62785841D1056DBCA8A41E079DC6 /* NSObject+EventBusAutoDispose.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43608299D3D24DD33277993F0C6755C4 /* EventBusProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CC2D236F57339132A18E8BE78B99290D /* EventBusProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48C8FC66CB406774CB19D2CF5AF5A631 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5003A763B64F974C1A943D27FA579E4D /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD55C176A319D205EC5AFD52E371381B /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A436E068E90BF60436D590D347C54A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		6DC4DC40D21C69E92961745A54F7A2CC /* EventSubscriberMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 505DE4C8D7C98F36E1FA2457F7F72B02 /* EventSubscriberMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9688D00F88D58C68C61EBA06F4212A2B /* Pods-DDMEventBusExampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA33746D56DF40D792CCDA6FB7CBF9DB /* Pods-DDMEventBusExampleTests-dummy.m */; };
+		B12AA1419F96C69874D0D4466CAA4965 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62B7AE4695F0DA1160DD1AC01F9065E /* EventBus.swift */; };
+		B63E64C1ECBB9E4445E3D0628580F43B /* Pods-DDMEventBusExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB32513C5A8F3550A5A09FCA52ADE431 /* Pods-DDMEventBusExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C068397CBF6AF30D1C90CD86BF23EF2A /* Pods-DDMEventBusExampleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C4CD6B561E15E089A6A27F14E1A543A /* Pods-DDMEventBusExampleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD13B2B02244277E6AB4966FEFE85EB /* DDMEventBus.h in Headers */ = {isa = PBXBuildFile; fileRef = B4EE52FC2D8AF8E41A34D109BDD21FBF /* DDMEventBus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8172AE660ED853C23E0EB609724266B /* DDMEventBus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A86640A533160BE465F2215C255143 /* DDMEventBus-dummy.m */; };
+		DC5D829285F8FBC7FCA092D97C81C194 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		DE10EEF1AA63A33A4FC9105AACA24BB6 /* DDMEventBus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B46330EC2C0FC53A239EE47537EF8DF8 /* DDMEventBus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E85C49C4FDA71DCD7054BB8414ACE9DA /* EventSubscriberMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D66AE4BE33B9611C4EB930164A47C3 /* EventSubscriberMaker.m */; };
+		F20D0F3814717FB621025353E98DDB50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F91B6C8EE13743FA3A28DD56EECB8FA4 /* Pods-DDMEventBusExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23828C94A9D95AC09F3463BD81C0D /* Pods-DDMEventBusExample-dummy.m */; };
+		FF8E6D614D63C7D29A8EB0400F3963AE /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6478E0076492D7A0049DEBA45D687CD /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		059659D979DA9A363646D73C7C999D81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 720C4000133FB85AFF68B6FB21CC6053;
+			remoteInfo = DDMEventBus;
+		};
+		9B4A2FDFFB74F75CB914D33A838E56AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 720C4000133FB85AFF68B6FB21CC6053;
+			remoteInfo = DDMEventBus;
+		};
+		F8AC9977223C3015197CB1923F28B9F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4FDF94D5FF93FC11D35F0CA319C40E0;
+			remoteInfo = "Pods-DDMEventBusExample";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06A53C5FFD3AD0B5A6A8DD234C4F27C0 /* Pods-DDMEventBusExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDMEventBusExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		06A73B423EF3AEC62987692C323DFECD /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
+		10114B02EC8BC8BDBAD1C26F78518CF7 /* Pods-DDMEventBusExampleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DDMEventBusExampleTests.modulemap"; sourceTree = "<group>"; };
+		14F5CBA38761535C33007259E99E3B83 /* Pods-DDMEventBusExampleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDMEventBusExampleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		197C5317CCC79464C17C0F25537144E3 /* Pods-DDMEventBusExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DDMEventBusExample.modulemap"; sourceTree = "<group>"; };
+		19FDA7FC049B751B562BFB523D80ED72 /* Pods-DDMEventBusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDMEventBusExample.release.xcconfig"; sourceTree = "<group>"; };
+		1B9FFD8FDCE1AA8E853550257149D1EE /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1BA23828C94A9D95AC09F3463BD81C0D /* Pods-DDMEventBusExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDMEventBusExample-dummy.m"; sourceTree = "<group>"; };
+		1EA155D50350318FD6357280AE789C69 /* DDMEventBus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DDMEventBus.modulemap; sourceTree = "<group>"; };
+		28339C17479F686D0386E59F46369141 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2D17EC2F01BB93A7A986C784943A0227 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		2E402FF543E35CCA01BA0D897EBDB4CB /* Pods-DDMEventBusExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDMEventBusExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		2E4641B108640AE2ECAC296B9041A117 /* DDMEventBus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDMEventBus-prefix.pch"; sourceTree = "<group>"; };
+		32A5B33885C1F336AF9831B05A117803 /* Pods-DDMEventBusExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDMEventBusExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		33CA7A467EBA5B9877C8FC8A2E10D4DD /* DDMEventBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DDMEventBus.release.xcconfig; sourceTree = "<group>"; };
+		3C4CD6B561E15E089A6A27F14E1A543A /* Pods-DDMEventBusExampleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDMEventBusExampleTests-umbrella.h"; sourceTree = "<group>"; };
+		407523D2504A3207BD1A0FD9F93551C1 /* DDMEventBus */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DDMEventBus; path = DDMEventBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		469CA67BDE0D44CEBB0430A6F3596827 /* Pods-DDMEventBusExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DDMEventBusExample"; path = Pods_DDMEventBusExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		503FA0669FD53C8C7C519E62B92F7EC8 /* Pods-DDMEventBusExampleTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDMEventBusExampleTests-Info.plist"; sourceTree = "<group>"; };
+		505DE4C8D7C98F36E1FA2457F7F72B02 /* EventSubscriberMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EventSubscriberMaker.h; sourceTree = "<group>"; };
+		5D554619AF6BA426777AEA0E23AB1B87 /* NSObject+EventBusAutoDispose.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EventBusAutoDispose.m"; sourceTree = "<group>"; };
+		5E3B0DA43F4365243EF1E0A6233AEE23 /* Pods-DDMEventBusExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDMEventBusExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6A30AB48238135A3FA3566430D71DC1A /* DDMEventBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DDMEventBus.debug.xcconfig; sourceTree = "<group>"; };
+		6AB7E110EAA6A4A7B5D86DEDF50EDE52 /* Pods-DDMEventBusExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDMEventBusExample-frameworks.sh"; sourceTree = "<group>"; };
+		6ECD6D5D31592A8D5EC962D6A4CB2DC1 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests.modulemap"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7D4E1B5DFD9995268A4313C7C7266E9C /* Pods-DDMEventBusExampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDMEventBusExampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		82639DAFF1292308323D94C85DA8E389 /* Pods-DDMEventBusExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDMEventBusExample.debug.xcconfig"; sourceTree = "<group>"; };
+		87D66AE4BE33B9611C4EB930164A47C3 /* EventSubscriberMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EventSubscriberMaker.m; sourceTree = "<group>"; };
+		9018B649645CE970E3921AC17B4E98F3 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests-Info.plist"; sourceTree = "<group>"; };
+		98EC7A90EFAB8500A89FD78DA785D8E4 /* DDMEventBus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DDMEventBus.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9977B5C626C298F31CC2C7155DF9ACBE /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9A655A4BA84A88790EAF156FDF3A7F75 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DDMEventBusExample-DDMEventBusExampleUITests"; path = Pods_DDMEventBusExample_DDMEventBusExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A99CFFA88F297CA5AFE6D01B2A95BCA8 /* DDMEventBus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DDMEventBus-Info.plist"; sourceTree = "<group>"; };
+		B46330EC2C0FC53A239EE47537EF8DF8 /* DDMEventBus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDMEventBus-umbrella.h"; sourceTree = "<group>"; };
+		B4EE52FC2D8AF8E41A34D109BDD21FBF /* DDMEventBus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDMEventBus.h; path = DDMEventBus/DDMEventBus.h; sourceTree = "<group>"; };
+		BB32513C5A8F3550A5A09FCA52ADE431 /* Pods-DDMEventBusExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDMEventBusExample-umbrella.h"; sourceTree = "<group>"; };
+		C4AE757E2C233EFAA60E7480C057CC67 /* Pods-DDMEventBusExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDMEventBusExample-Info.plist"; sourceTree = "<group>"; };
+		CC2D236F57339132A18E8BE78B99290D /* EventBusProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EventBusProtocol.h; sourceTree = "<group>"; };
+		D1A86640A533160BE465F2215C255143 /* DDMEventBus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DDMEventBus-dummy.m"; sourceTree = "<group>"; };
+		D6478E0076492D7A0049DEBA45D687CD /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests-dummy.m"; sourceTree = "<group>"; };
+		DA33746D56DF40D792CCDA6FB7CBF9DB /* Pods-DDMEventBusExampleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDMEventBusExampleTests-dummy.m"; sourceTree = "<group>"; };
+		E0F1C0B5AA7AD5D1080F4117A4B8A852 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E2349009ECE9D83B99650E3C21F88F56 /* Pods-DDMEventBusExampleTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DDMEventBusExampleTests"; path = Pods_DDMEventBusExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7EA5C9EAEAF35B52B7B613E0740320B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F62B7AE4695F0DA1160DD1AC01F9065E /* EventBus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
+		F7DE62785841D1056DBCA8A41E079DC6 /* NSObject+EventBusAutoDispose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+EventBusAutoDispose.h"; sourceTree = "<group>"; };
+		FD55C176A319D205EC5AFD52E371381B /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDMEventBusExample-DDMEventBusExampleUITests-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42684A80DE8F80F1F0AB7A591707852D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F20D0F3814717FB621025353E98DDB50 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47DCEBFBFBFFCDC836EA3AF7894396E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A436E068E90BF60436D590D347C54A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A22677C57721548712DEDA9950F587B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C8FC66CB406774CB19D2CF5AF5A631 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E16CB9B66CBB27605C5025CF0D9FF373 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC5D829285F8FBC7FCA092D97C81C194 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EAEE12613BC098BC5567EAF4509AD31 /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				CC2D236F57339132A18E8BE78B99290D /* EventBusProtocol.h */,
+				505DE4C8D7C98F36E1FA2457F7F72B02 /* EventSubscriberMaker.h */,
+				87D66AE4BE33B9611C4EB930164A47C3 /* EventSubscriberMaker.m */,
+				F7DE62785841D1056DBCA8A41E079DC6 /* NSObject+EventBusAutoDispose.h */,
+				5D554619AF6BA426777AEA0E23AB1B87 /* NSObject+EventBusAutoDispose.m */,
+			);
+			name = Objc;
+			path = DDMEventBus/Objc;
+			sourceTree = "<group>";
+		};
+		2F95A692A9BF7F22F99351588A38C25E /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33451CC69333C5AD07C895333736D242 /* DDMEventBus */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		33451CC69333C5AD07C895333736D242 /* DDMEventBus */ = {
+			isa = PBXGroup;
+			children = (
+				B4EE52FC2D8AF8E41A34D109BDD21FBF /* DDMEventBus.h */,
+				1EAEE12613BC098BC5567EAF4509AD31 /* Objc */,
+				8DBE1B43EC191BF95DECF759CFAB8925 /* Pod */,
+				AA3C1655BCF9B3E8FEF487856E4EAEAD /* Support Files */,
+				DFEB333448958C4CA7D9AA483273741D /* Swift */,
+			);
+			name = DDMEventBus;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5E8F7889C931EBABA59FA2A4477120B5 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B78172A50F94EDEFA3CD9CBE8A8F6B54 /* Pods-DDMEventBusExample */,
+				BAC2D6A949681936AB07AC7CE3BA5A08 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests */,
+				A06AE2B6AA5DDAA0A2804FD94D6BB138 /* Pods-DDMEventBusExampleTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8DBE1B43EC191BF95DECF759CFAB8925 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				98EC7A90EFAB8500A89FD78DA785D8E4 /* DDMEventBus.podspec */,
+				2D17EC2F01BB93A7A986C784943A0227 /* LICENSE.txt */,
+				E7EA5C9EAEAF35B52B7B613E0740320B /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A06AE2B6AA5DDAA0A2804FD94D6BB138 /* Pods-DDMEventBusExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				10114B02EC8BC8BDBAD1C26F78518CF7 /* Pods-DDMEventBusExampleTests.modulemap */,
+				14F5CBA38761535C33007259E99E3B83 /* Pods-DDMEventBusExampleTests-acknowledgements.markdown */,
+				7D4E1B5DFD9995268A4313C7C7266E9C /* Pods-DDMEventBusExampleTests-acknowledgements.plist */,
+				DA33746D56DF40D792CCDA6FB7CBF9DB /* Pods-DDMEventBusExampleTests-dummy.m */,
+				503FA0669FD53C8C7C519E62B92F7EC8 /* Pods-DDMEventBusExampleTests-Info.plist */,
+				3C4CD6B561E15E089A6A27F14E1A543A /* Pods-DDMEventBusExampleTests-umbrella.h */,
+				06A53C5FFD3AD0B5A6A8DD234C4F27C0 /* Pods-DDMEventBusExampleTests.debug.xcconfig */,
+				2E402FF543E35CCA01BA0D897EBDB4CB /* Pods-DDMEventBusExampleTests.release.xcconfig */,
+			);
+			name = "Pods-DDMEventBusExampleTests";
+			path = "Target Support Files/Pods-DDMEventBusExampleTests";
+			sourceTree = "<group>";
+		};
+		AA3C1655BCF9B3E8FEF487856E4EAEAD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EA155D50350318FD6357280AE789C69 /* DDMEventBus.modulemap */,
+				D1A86640A533160BE465F2215C255143 /* DDMEventBus-dummy.m */,
+				A99CFFA88F297CA5AFE6D01B2A95BCA8 /* DDMEventBus-Info.plist */,
+				2E4641B108640AE2ECAC296B9041A117 /* DDMEventBus-prefix.pch */,
+				B46330EC2C0FC53A239EE47537EF8DF8 /* DDMEventBus-umbrella.h */,
+				6A30AB48238135A3FA3566430D71DC1A /* DDMEventBus.debug.xcconfig */,
+				33CA7A467EBA5B9877C8FC8A2E10D4DD /* DDMEventBus.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "DDMEventBusExample/Pods/Target Support Files/DDMEventBus";
+			sourceTree = "<group>";
+		};
+		B78172A50F94EDEFA3CD9CBE8A8F6B54 /* Pods-DDMEventBusExample */ = {
+			isa = PBXGroup;
+			children = (
+				197C5317CCC79464C17C0F25537144E3 /* Pods-DDMEventBusExample.modulemap */,
+				5E3B0DA43F4365243EF1E0A6233AEE23 /* Pods-DDMEventBusExample-acknowledgements.markdown */,
+				32A5B33885C1F336AF9831B05A117803 /* Pods-DDMEventBusExample-acknowledgements.plist */,
+				1BA23828C94A9D95AC09F3463BD81C0D /* Pods-DDMEventBusExample-dummy.m */,
+				6AB7E110EAA6A4A7B5D86DEDF50EDE52 /* Pods-DDMEventBusExample-frameworks.sh */,
+				C4AE757E2C233EFAA60E7480C057CC67 /* Pods-DDMEventBusExample-Info.plist */,
+				BB32513C5A8F3550A5A09FCA52ADE431 /* Pods-DDMEventBusExample-umbrella.h */,
+				82639DAFF1292308323D94C85DA8E389 /* Pods-DDMEventBusExample.debug.xcconfig */,
+				19FDA7FC049B751B562BFB523D80ED72 /* Pods-DDMEventBusExample.release.xcconfig */,
+			);
+			name = "Pods-DDMEventBusExample";
+			path = "Target Support Files/Pods-DDMEventBusExample";
+			sourceTree = "<group>";
+		};
+		BAC2D6A949681936AB07AC7CE3BA5A08 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6ECD6D5D31592A8D5EC962D6A4CB2DC1 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.modulemap */,
+				28339C17479F686D0386E59F46369141 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-acknowledgements.markdown */,
+				9977B5C626C298F31CC2C7155DF9ACBE /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-acknowledgements.plist */,
+				D6478E0076492D7A0049DEBA45D687CD /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-dummy.m */,
+				06A73B423EF3AEC62987692C323DFECD /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-frameworks.sh */,
+				9018B649645CE970E3921AC17B4E98F3 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-Info.plist */,
+				FD55C176A319D205EC5AFD52E371381B /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-umbrella.h */,
+				1B9FFD8FDCE1AA8E853550257149D1EE /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.debug.xcconfig */,
+				E0F1C0B5AA7AD5D1080F4117A4B8A852 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.release.xcconfig */,
+			);
+			name = "Pods-DDMEventBusExample-DDMEventBusExampleUITests";
+			path = "Target Support Files/Pods-DDMEventBusExample-DDMEventBusExampleUITests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				2F95A692A9BF7F22F99351588A38C25E /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				D43F83BC565B377F531DAB1DCBFC57CB /* Products */,
+				5E8F7889C931EBABA59FA2A4477120B5 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D43F83BC565B377F531DAB1DCBFC57CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				407523D2504A3207BD1A0FD9F93551C1 /* DDMEventBus */,
+				469CA67BDE0D44CEBB0430A6F3596827 /* Pods-DDMEventBusExample */,
+				9A655A4BA84A88790EAF156FDF3A7F75 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests */,
+				E2349009ECE9D83B99650E3C21F88F56 /* Pods-DDMEventBusExampleTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFEB333448958C4CA7D9AA483273741D /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				F62B7AE4695F0DA1160DD1AC01F9065E /* EventBus.swift */,
+			);
+			name = Swift;
+			path = DDMEventBus/Swift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		560513F63B7C2DD0EB2D244CF6854280 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD13B2B02244277E6AB4966FEFE85EB /* DDMEventBus.h in Headers */,
+				DE10EEF1AA63A33A4FC9105AACA24BB6 /* DDMEventBus-umbrella.h in Headers */,
+				43608299D3D24DD33277993F0C6755C4 /* EventBusProtocol.h in Headers */,
+				6DC4DC40D21C69E92961745A54F7A2CC /* EventSubscriberMaker.h in Headers */,
+				172B38B4286C593CE0BCF9481940ED0B /* NSObject+EventBusAutoDispose.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6407F9647BA92DB52A65C09B17BB8742 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C068397CBF6AF30D1C90CD86BF23EF2A /* Pods-DDMEventBusExampleTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BDD0C8A2FDDB08086C8B0006A9AE700 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5003A763B64F974C1A943D27FA579E4D /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86F9AE90B5E277508D030B4F6EBB29C3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B63E64C1ECBB9E4445E3D0628580F43B /* Pods-DDMEventBusExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		720C4000133FB85AFF68B6FB21CC6053 /* DDMEventBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ABEA8EEC5139F7B68477339ADC91300 /* Build configuration list for PBXNativeTarget "DDMEventBus" */;
+			buildPhases = (
+				560513F63B7C2DD0EB2D244CF6854280 /* Headers */,
+				642A6AA4B06E1A027D8879797461B030 /* Sources */,
+				42684A80DE8F80F1F0AB7A591707852D /* Frameworks */,
+				ABECF0627EF8CB6530E2B8C754E12D0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DDMEventBus;
+			productName = DDMEventBus;
+			productReference = 407523D2504A3207BD1A0FD9F93551C1 /* DDMEventBus */;
+			productType = "com.apple.product-type.framework";
+		};
+		86C8F1ED10EA800F26ACF150B87C01A1 /* Pods-DDMEventBusExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DBF8C43EAA2441F70120AAAE12FC113 /* Build configuration list for PBXNativeTarget "Pods-DDMEventBusExampleTests" */;
+			buildPhases = (
+				6407F9647BA92DB52A65C09B17BB8742 /* Headers */,
+				E47316B1BAFBE51A304F7D930A64012A /* Sources */,
+				7A22677C57721548712DEDA9950F587B /* Frameworks */,
+				930E77BBE2C1D2B3C9720C2A5EF87E78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5218C493E37F5A5F55524E24588E92A /* PBXTargetDependency */,
+			);
+			name = "Pods-DDMEventBusExampleTests";
+			productName = Pods_DDMEventBusExampleTests;
+			productReference = E2349009ECE9D83B99650E3C21F88F56 /* Pods-DDMEventBusExampleTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4FDF94D5FF93FC11D35F0CA319C40E0 /* Pods-DDMEventBusExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71AB5173161108FD158392E3D3329D60 /* Build configuration list for PBXNativeTarget "Pods-DDMEventBusExample" */;
+			buildPhases = (
+				86F9AE90B5E277508D030B4F6EBB29C3 /* Headers */,
+				343244A967CF5E07C798E775F9A08A3B /* Sources */,
+				E16CB9B66CBB27605C5025CF0D9FF373 /* Frameworks */,
+				82C8E5B1AE9372B4780BC45952684D18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71CFDC09FE92D64258F9D2CC72413C38 /* PBXTargetDependency */,
+			);
+			name = "Pods-DDMEventBusExample";
+			productName = Pods_DDMEventBusExample;
+			productReference = 469CA67BDE0D44CEBB0430A6F3596827 /* Pods-DDMEventBusExample */;
+			productType = "com.apple.product-type.framework";
+		};
+		C58AB1D4F8AC129F6EC9ACC7BE87F035 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D747BB231A4FA51997545499096F78 /* Build configuration list for PBXNativeTarget "Pods-DDMEventBusExample-DDMEventBusExampleUITests" */;
+			buildPhases = (
+				6BDD0C8A2FDDB08086C8B0006A9AE700 /* Headers */,
+				5B97D1530277014E727E37F6C6340119 /* Sources */,
+				47DCEBFBFBFFCDC836EA3AF7894396E7 /* Frameworks */,
+				002C68B0C8DDFF4C348AB50FFAAD09BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1939A8387735FA439259AFA0B46F3544 /* PBXTargetDependency */,
+			);
+			name = "Pods-DDMEventBusExample-DDMEventBusExampleUITests";
+			productName = Pods_DDMEventBusExample_DDMEventBusExampleUITests;
+			productReference = 9A655A4BA84A88790EAF156FDF3A7F75 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = D43F83BC565B377F531DAB1DCBFC57CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				720C4000133FB85AFF68B6FB21CC6053 /* DDMEventBus */,
+				B4FDF94D5FF93FC11D35F0CA319C40E0 /* Pods-DDMEventBusExample */,
+				C58AB1D4F8AC129F6EC9ACC7BE87F035 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests */,
+				86C8F1ED10EA800F26ACF150B87C01A1 /* Pods-DDMEventBusExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		002C68B0C8DDFF4C348AB50FFAAD09BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82C8E5B1AE9372B4780BC45952684D18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		930E77BBE2C1D2B3C9720C2A5EF87E78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABECF0627EF8CB6530E2B8C754E12D0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		343244A967CF5E07C798E775F9A08A3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91B6C8EE13743FA3A28DD56EECB8FA4 /* Pods-DDMEventBusExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B97D1530277014E727E37F6C6340119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF8E6D614D63C7D29A8EB0400F3963AE /* Pods-DDMEventBusExample-DDMEventBusExampleUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		642A6AA4B06E1A027D8879797461B030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8172AE660ED853C23E0EB609724266B /* DDMEventBus-dummy.m in Sources */,
+				B12AA1419F96C69874D0D4466CAA4965 /* EventBus.swift in Sources */,
+				E85C49C4FDA71DCD7054BB8414ACE9DA /* EventSubscriberMaker.m in Sources */,
+				0787B950DF1200E14C35905049D69E4A /* NSObject+EventBusAutoDispose.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E47316B1BAFBE51A304F7D930A64012A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9688D00F88D58C68C61EBA06F4212A2B /* Pods-DDMEventBusExampleTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1939A8387735FA439259AFA0B46F3544 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DDMEventBus;
+			target = 720C4000133FB85AFF68B6FB21CC6053 /* DDMEventBus */;
+			targetProxy = 059659D979DA9A363646D73C7C999D81 /* PBXContainerItemProxy */;
+		};
+		71CFDC09FE92D64258F9D2CC72413C38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DDMEventBus;
+			target = 720C4000133FB85AFF68B6FB21CC6053 /* DDMEventBus */;
+			targetProxy = 9B4A2FDFFB74F75CB914D33A838E56AF /* PBXContainerItemProxy */;
+		};
+		B5218C493E37F5A5F55524E24588E92A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-DDMEventBusExample";
+			target = B4FDF94D5FF93FC11D35F0CA319C40E0 /* Pods-DDMEventBusExample */;
+			targetProxy = F8AC9977223C3015197CB1923F28B9F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		032504F201C69275441D32C68CCD1F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		3E9F46475876B72BC7C7CDA87ACB977B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FDA7FC049B751B562BFB523D80ED72 /* Pods-DDMEventBusExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DDMEventBusExample/Pods-DDMEventBusExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDMEventBusExample/Pods-DDMEventBusExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		48F67AB1E5DBE79CCF2F86C75296AB01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4C3911DB0C01A5E60F2590503D7E0DC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E402FF543E35CCA01BA0D897EBDB4CB /* Pods-DDMEventBusExampleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DDMEventBusExampleTests/Pods-DDMEventBusExampleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDMEventBusExampleTests/Pods-DDMEventBusExampleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		64B715CD93512B752C3E95393BFA3CF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82639DAFF1292308323D94C85DA8E389 /* Pods-DDMEventBusExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DDMEventBusExample/Pods-DDMEventBusExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDMEventBusExample/Pods-DDMEventBusExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D7705293DF3EE414237CC440DAF1B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33CA7A467EBA5B9877C8FC8A2E10D4DD /* DDMEventBus.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DDMEventBus/DDMEventBus-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DDMEventBus/DDMEventBus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DDMEventBus/DDMEventBus.modulemap";
+				PRODUCT_MODULE_NAME = DDMEventBus;
+				PRODUCT_NAME = DDMEventBus;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8145083729B63A781262F77A125C5DF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B9FFD8FDCE1AA8E853550257149D1EE /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DDMEventBusExample-DDMEventBusExampleUITests/Pods-DDMEventBusExample-DDMEventBusExampleUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDMEventBusExample-DDMEventBusExampleUITests/Pods-DDMEventBusExample-DDMEventBusExampleUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9A04D3B2C574FC2E16A75A9645E74ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06A53C5FFD3AD0B5A6A8DD234C4F27C0 /* Pods-DDMEventBusExampleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DDMEventBusExampleTests/Pods-DDMEventBusExampleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDMEventBusExampleTests/Pods-DDMEventBusExampleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB9E99ECD2A2498A4B0E4B55387B1317 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0F1C0B5AA7AD5D1080F4117A4B8A852 /* Pods-DDMEventBusExample-DDMEventBusExampleUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DDMEventBusExample-DDMEventBusExampleUITests/Pods-DDMEventBusExample-DDMEventBusExampleUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDMEventBusExample-DDMEventBusExampleUITests/Pods-DDMEventBusExample-DDMEventBusExampleUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FF77CBC24B21317EDA873BBBE441E005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A30AB48238135A3FA3566430D71DC1A /* DDMEventBus.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DDMEventBus/DDMEventBus-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DDMEventBus/DDMEventBus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DDMEventBus/DDMEventBus.modulemap";
+				PRODUCT_MODULE_NAME = DDMEventBus;
+				PRODUCT_NAME = DDMEventBus;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F67AB1E5DBE79CCF2F86C75296AB01 /* Debug */,
+				032504F201C69275441D32C68CCD1F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ABEA8EEC5139F7B68477339ADC91300 /* Build configuration list for PBXNativeTarget "DDMEventBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF77CBC24B21317EDA873BBBE441E005 /* Debug */,
+				6D7705293DF3EE414237CC440DAF1B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71AB5173161108FD158392E3D3329D60 /* Build configuration list for PBXNativeTarget "Pods-DDMEventBusExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64B715CD93512B752C3E95393BFA3CF3 /* Debug */,
+				3E9F46475876B72BC7C7CDA87ACB977B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DBF8C43EAA2441F70120AAAE12FC113 /* Build configuration list for PBXNativeTarget "Pods-DDMEventBusExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A04D3B2C574FC2E16A75A9645E74ED2 /* Debug */,
+				4C3911DB0C01A5E60F2590503D7E0DC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D747BB231A4FA51997545499096F78 /* Build configuration list for PBXNativeTarget "Pods-DDMEventBusExample-DDMEventBusExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8145083729B63A781262F77A125C5DF8 /* Debug */,
+				FB9E99ECD2A2498A4B0E4B55387B1317 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
