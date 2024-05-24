@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  EventBusExample
-//
-//  Created by Meng.Lin on 2024/05/13.
-//
+
 
 import UIKit
 

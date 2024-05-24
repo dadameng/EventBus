@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_DDMEventBusExample_DDMEventBusExampleUITests : NSObject
+@end
+@implementation PodsDummy_Pods_DDMEventBusExample_DDMEventBusExampleUITests
+@end

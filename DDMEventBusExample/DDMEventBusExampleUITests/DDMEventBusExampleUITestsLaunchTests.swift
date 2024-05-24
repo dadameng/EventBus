@@ -1,13 +1,8 @@
-//
-//  EventBusExampleUITestsLaunchTests.swift
-//  EventBusExampleUITests
-//
-//  Created by Meng.Lin on 2024/05/13.
-//
+
 
 import XCTest
 
-final class EventBusExampleUITestsLaunchTests: XCTestCase {
+final class DDMEventBusExampleUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

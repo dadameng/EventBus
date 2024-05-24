@@ -1,0 +1,6 @@
+framework module Pods_DDMEventBusExample {
+  umbrella header "Pods-DDMEventBusExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

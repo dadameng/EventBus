@@ -7,7 +7,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EventSubscriberMaker<EventType> : NSObject <EventSubscriberMaking>
+@interface EventSubscriberMaker<EventType> : NSObject
 - (instancetype)initWithEventBus:(EventBus *)eventBus eventClass:(Class)eventClass;
 
 @property (nonatomic, copy) EventSubscriberMaker<EventType> * (^ atQueueClosure)(dispatch_queue_t queue);
@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSMutableArray<NSString *> *eventSubTypes;
 
 - (id<EventSubscribeToken>)next:(void (^)(EventType event))handler;
+- (instancetype)atQueue:(dispatch_queue_t)queue;
+- (instancetype)autoDisposeTokenWith:(EventLifeCycleTracker *)object;
+- (instancetype)ofSubType:(NSString *)eventType;
 - (EventSubscriber *)makeWithUniqueId:(NSString *)uniqueId;
 
 @end

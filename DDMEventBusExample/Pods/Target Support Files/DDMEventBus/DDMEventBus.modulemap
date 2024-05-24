@@ -1,0 +1,6 @@
+framework module DDMEventBus {
+  umbrella header "DDMEventBus-umbrella.h"
+
+  export *
+  module * { export * }
+}

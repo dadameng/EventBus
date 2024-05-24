@@ -1,13 +1,8 @@
-//
-//  EventBusExampleUITests.swift
-//  EventBusExampleUITests
-//
-//  Created by Meng.Lin on 2024/05/13.
-//
+
 
 import XCTest
 
-final class EventBusExampleUITests: XCTestCase {
+final class DDMEventBusExampleUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

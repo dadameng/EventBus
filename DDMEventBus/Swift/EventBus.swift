@@ -14,7 +14,7 @@ protocol EventBusContainerValue {
 }
 // MARK: Content Type
 
-public final class SwiftEventSubscriberMaker<EventType: Event>: NSObject, EventSubscriberMaking {
+public final class SwiftEventSubscriberMaker<EventType: Event>: NSObject {
     private unowned var eventBus: EventBus
     var eventClass: EventType.Type
     var queue: DispatchQueue?
@@ -27,7 +27,8 @@ public final class SwiftEventSubscriberMaker<EventType: Event>: NSObject, EventS
         self.eventClass = eventClass
     }
 
-    public func next(_ handler: @escaping (Event) -> Void) -> EventSubscribeToken {
+    @discardableResult
+    public func next(_ handler: @escaping (EventType) -> Void) -> EventSubscribeToken {
         self.handler = { event in
             handler(event)
         }
