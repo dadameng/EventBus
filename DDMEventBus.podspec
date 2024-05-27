@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DDMEventBus"
-  s.version      = "2.0.0"
+  s.version      = "2.0.3"
   s.summary      = "EventBus is a lightweight, protocol-oriented event bus framework for Swift."
   s.description  = <<-DESC
                     EventBus is a lightweight, protocol-oriented event bus framework for Swift. It facilitates communication between components in an application without requiring the components to have direct references to each other, which helps in reducing coupling and enhancing modularity.
