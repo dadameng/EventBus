@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "13.0"
   s.source_files  = "DDMEventBus/**/*.{h,m,swift}"
-  s.public_header_files = "EventBus/**/*.h"
+  s.public_header_files = "DDMEventBus/**/*.h"
   s.frameworks = "Foundation"
   s.requires_arc = true
   s.static_framework = false
